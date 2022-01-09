@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/*
+** Reset CSS
+*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/**
+ * Tag Styles
+ */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: #10141b;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
+  user-select: none;
+}
+
+/**
+ * Class Styles
+ */
+.title {
+  font-family: "Kaushan Script", cursive;
+  font-size: 5rem;
+  color: #fff;
+  text-align: center;
+  margin: 2rem;
+  text-shadow: 0 0 5px #fff, 0 0 20px #fff;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.top-circle {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(40% at 0% 0%);
+  z-index: -1;
+}
+
+.bottom-circle {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(40% at 100% 100%);
+  z-index: -1;
+}
+
+.keyboard {
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 90rem;
+  margin: 0 2rem;
+}
+
+.keyboard > .key {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem;
+  padding: 0.3rem;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  user-select: none;
+  cursor: pointer;
+}
+
+.keyboard > .key.active {
+  background: rgba(255, 255, 255, 0.3) !important;
+  text-shadow: 0 0 5px #fff, 0 0 100px #fff;
+  font-size: 1.8rem !important;
+}
+
+.keyboard > .key > span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: ripple-effect 0.5s;
+}
+
+/**
+ * ID Styles
+ */
+#logo {
+  text-align: center;
+  margin: 2rem;
+}
+
+/**
+ * Animations
+ */
+@keyframes ripple-effect {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+/**
+ * Media Queries
+ */
+@media only screen and (max-width: 1024px) {
+  .keyboard > .key {
+    height: 5.8rem;
+    width: 5.8rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .keyboard > .key {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .keyboard > .key {
+    height: 8rem;
+    width: 8rem;
+    margin: 0.6rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+}
